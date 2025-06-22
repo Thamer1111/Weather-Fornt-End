@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { LoadingSpinner } from '../components/LoadingSpinner';
 import { ErrorMessage } from '../components/ErrorMessage';
 import { Link, useNavigate } from 'react-router';
 import { useAuth } from '../context/AuthContext';
@@ -27,7 +26,7 @@ export const SignUpPage: React.FC = () => {
       const response = await axios.post('https://weather-project-fuwi.onrender.com/api/auth/signup', { email, password });
       
       if (response.data && response.data.token) {
-        login(response.data.token, email);
+        login(response.data.token, email, navigate);
       } else {
         setError('Authentication failed: No token received.');
       }

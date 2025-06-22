@@ -70,8 +70,8 @@ export const router = createBrowserRouter([
   },
 ]);
 
-// This file only exports the router object, App.tsx will render RouterProvider
-// function Router() {
-//   return <RouterProvider router={router} />;
-// }
-// export default Router; // No default export of component here
+function Router() {
+  return null; 
+}
+
+export default Router; 
